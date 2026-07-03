@@ -8,7 +8,7 @@ Toxic Match homepage preview
 
 ## The Core Question
 
-**How can poisoned data and manipulated digital evidence influence AI systems—and the people who trust them?**
+**How can poisoned data and manipulated digital evidence influence AI systems and the people who trust them?**
 
 ## Project Overview
 
