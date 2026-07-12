@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Badge,
   Box,
@@ -9,47 +9,32 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-const choices = [
-  {
-    id: "audit",
-    title: "Ask for the audit trail",
-    detail:
-      "The data provenance is the missing link. A real audit trail reveals whether evidence was altered.",
-  },
-  {
-    id: "screenshot",
-    title: "Verify the leaked screenshot independently",
-    detail:
-      "You cross-check the image with a second source and find the message is clipped to support a false narrative.",
-  },
-  {
-    id: "panic",
-    title: "Let the drama decide for you",
-    detail:
-      "The system keeps escalating the conflict, but panic is the perfect environment for bad decisions.",
-  },
-];
-
 export default function PlayAct2({ onBack, onGoAct3 }) {
+  const [act, setAct] = useState(null);
   const [selectedChoice, setSelectedChoice] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/story/2")
+      .then((response) => response.json())
+      .then((data) => setAct(data))
+      .catch(() => setAct(null));
+  }, []);
 
   return (
     <Box textAlign="center" py={12} px={6} maxW="4xl" mx="auto">
       <Badge colorScheme="orange" mb={3}>
-        Act 2 • Mixed Signals
+        Act 2 • {act?.name || "Mixed Signals"}
       </Badge>
       <Heading as="h2" size="xl" mb={4}>
-        A romance show should feel simple. This one doesn’t.
+        {act?.name || "A romance show should feel simple. This one doesn’t."}
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
-        Compatibility scores change overnight, leaked private messages begin to
-        circulate, and the contestants start doubting the show’s evidence. Gemma
-        must decide whether Rex is lying, whether someone is manipulating the
-        system, or whether the algorithm itself has been poisoned.
+        {act?.intro ||
+          "Compatibility scores change overnight, leaked private messages begin to circulate, and the contestants start doubting the evidence."}
       </Text>
 
       <Stack spacing={3} mb={8}>
-        {choices.map((choice) => (
+        {act?.choices?.map((choice) => (
           <Button
             key={choice.id}
             variant={selectedChoice === choice.id ? "solid" : "outline"}
@@ -77,12 +62,8 @@ export default function PlayAct2({ onBack, onGoAct3 }) {
             What you learn
           </Text>
           <Text>
-            {selectedChoice === "audit" &&
-              "You realize the best defense is to follow the trail of the data itself, not the drama around it."}
-            {selectedChoice === "screenshot" &&
-              "The screenshot is incomplete and misleading, proving how easy it is to weaponize context."}
-            {selectedChoice === "panic" &&
-              "You see the danger of letting emotion override verification. The system is not the only thing that can be manipulated."}
+            {selectedChoice === "audit" && act?.lesson}
+            {selectedChoice === "screenshot" && act?.lesson}
           </Text>
         </Box>
       )}

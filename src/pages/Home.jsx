@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Badge,
   Box,
@@ -5,17 +6,30 @@ import {
   Flex,
   Heading,
   HStack,
-  Progress,
   Text,
   VStack,
 } from "@chakra-ui/react";
 
 export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
+  const [backendStatus, setBackendStatus] = useState("checking...");
+  const [story, setStory] = useState(null);
   const highlights = [
     "Data poisoning",
     "Digital evidence",
     "Algorithmic trust",
   ];
+
+  useEffect(() => {
+    fetch("/api/health")
+      .then((response) => response.json())
+      .then((data) => setBackendStatus(data.message))
+      .catch(() => setBackendStatus("backend offline"));
+
+    fetch("/api/story")
+      .then((response) => response.json())
+      .then((data) => setStory(data))
+      .catch(() => setStory(null));
+  }, []);
 
   return (
     <Box textAlign="center" py={12} px={6} maxW="4xl" mx="auto">
@@ -36,9 +50,20 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
         <Text fontSize="sm" fontWeight="bold" mb={2}>
           Story progress
         </Text>
-        <Progress value={33} colorScheme="purple" size="sm" />
+        <Box
+          h="8px"
+          borderRadius="full"
+          bg="whiteAlpha.200"
+          overflow="hidden"
+          mb={2}
+        >
+          <Box h="100%" w="33%" bg="purple.400" />
+        </Box>
         <Text fontSize="sm" mt={2} color="gray.400">
           Three acts • start with Act 1 to begin the investigation
+        </Text>
+        <Text fontSize="xs" mt={3} color="gray.500">
+          Backend status: {backendStatus}
         </Text>
       </Box>
 
@@ -72,18 +97,22 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
       />
 
       <HStack justify="center" spacing={4} flexWrap="wrap">
-        <Box borderWidth="1px" borderRadius="md" px={4} py={3} minW="180px">
-          <Text fontWeight="bold">Act 1</Text>
-          <Text fontSize="sm">Question the profile</Text>
-        </Box>
-        <Box borderWidth="1px" borderRadius="md" px={4} py={3} minW="180px">
-          <Text fontWeight="bold">Act 2</Text>
-          <Text fontSize="sm">Trace the tampered evidence</Text>
-        </Box>
-        <Box borderWidth="1px" borderRadius="md" px={4} py={3} minW="180px">
-          <Text fontWeight="bold">Act 3</Text>
-          <Text fontSize="sm">Verify before you trust</Text>
-        </Box>
+        {story?.acts?.map((act) => (
+          <Box
+            key={act.id}
+            borderWidth="1px"
+            borderRadius="md"
+            px={4}
+            py={3}
+            minW="180px"
+          >
+            <Text fontWeight="bold">Act {act.id}</Text>
+            <Text fontSize="sm">{act.name}</Text>
+            <Text fontSize="xs" mt={1} color="gray.400">
+              {act.description}
+            </Text>
+          </Box>
+        ))}
       </HStack>
     </Box>
   );

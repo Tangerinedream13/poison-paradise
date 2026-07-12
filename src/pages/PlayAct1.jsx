@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Badge,
   Box,
@@ -9,47 +9,32 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-const choices = [
-  {
-    id: "source",
-    title: "Check where the profile came from",
-    detail:
-      "You trace the profile back to an unverified upload and realize the bio was edited after the episode began.",
-  },
-  {
-    id: "timing",
-    title: "Compare timestamps on the screenshots",
-    detail:
-      "The evidence shifts by the minute, which suggests someone is swapping context in real time.",
-  },
-  {
-    id: "trust",
-    title: "Trust the matchmaker and move on",
-    detail:
-      "The system stays confident, but that confidence is exactly what makes the manipulation harder to spot.",
-  },
-];
-
 export default function PlayAct1({ onGoHome, onGoAct2 }) {
+  const [act, setAct] = useState(null);
   const [selectedChoice, setSelectedChoice] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/story/1")
+      .then((response) => response.json())
+      .then((data) => setAct(data))
+      .catch(() => setAct(null));
+  }, []);
 
   return (
     <Box textAlign="center" py={12} px={6} maxW="4xl" mx="auto">
       <Badge colorScheme="teal" mb={3}>
-        Act 1 • The Pairing
+        Act 1 • {act?.name || "The Pairing"}
       </Badge>
       <Heading as="h2" size="xl" mb={4}>
-        The algorithm says they’re perfect for each other.
+        {act?.name || "The algorithm says they’re perfect for each other."}
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
-        Gemma arrives at Perfect Match and learns that the show’s algorithm has
-        paired her with Rex, the one person she already knows has a history of
-        suspicious behavior. The matchmaker calls them a 98% match, but the
-        details feel staged and wrong.
+        {act?.intro ||
+          "Gemma arrives at Perfect Match and discovers the algorithm has paired her with Rex."}
       </Text>
 
       <Stack spacing={3} mb={8}>
-        {choices.map((choice) => (
+        {act?.choices?.map((choice) => (
           <Button
             key={choice.id}
             variant={selectedChoice === choice.id ? "solid" : "outline"}
@@ -77,12 +62,8 @@ export default function PlayAct1({ onGoHome, onGoAct2 }) {
             Why this matters
           </Text>
           <Text>
-            {selectedChoice === "source" &&
-              "You uncover the first clue: the profile changed after the episode started, which makes the system’s confidence suspect."}
-            {selectedChoice === "timing" &&
-              "You spot inconsistent timestamps and begin to see how evidence can be edited to fit a story."}
-            {selectedChoice === "trust" &&
-              "You learn that trusting the system without verification is exactly how poisoned evidence slips through."}
+            {selectedChoice === "profile" && act?.lesson}
+            {selectedChoice === "timing" && act?.lesson}
           </Text>
         </Box>
       )}
