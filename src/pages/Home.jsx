@@ -5,6 +5,7 @@ import {
   Flex,
   Heading,
   HStack,
+  Progress,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -26,10 +27,20 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
       </Heading>
       <Text fontSize="xl" mb={6} maxW="3xl" mx="auto">
         Gemma arrives on a glamorous dating competition and discovers that the
-        algorithm has paired her with Rex. What should be a romance reality
-        show becomes a mystery about manipulated signals, suspicious evidence,
-        and a system that may be feeding on bad data.
+        algorithm has paired her with Rex. What should be a romance reality show
+        becomes a mystery about manipulated signals, suspicious evidence, and a
+        system that may be feeding on bad data.
       </Text>
+
+      <Box maxW="md" mx="auto" mb={8}>
+        <Text fontSize="sm" fontWeight="bold" mb={2}>
+          Story progress
+        </Text>
+        <Progress value={33} colorScheme="purple" size="sm" />
+        <Text fontSize="sm" mt={2} color="gray.400">
+          Three acts • start with Act 1 to begin the investigation
+        </Text>
+      </Box>
 
       <Flex justify="center" gap={3} wrap="wrap" mb={8}>
         {highlights.map((item) => (
