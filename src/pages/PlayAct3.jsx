@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Badge,
   Box,
@@ -9,47 +9,31 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-const choices = [
-  {
-    id: "frame",
-    title: "Blame Rex and move on",
-    detail:
-      "This is the easiest answer, but it ignores the evidence trail and leaves the poisoning in place.",
-  },
-  {
-    id: "investigate",
-    title: "Trace the poisoned data back to its source",
-    detail:
-      "You identify the manipulated records and realize the system was fed false information before it ever made a recommendation.",
-  },
-  {
-    id: "report",
-    title: "Document everything and report the anomaly",
-    detail:
-      "This is the safest move. It protects the investigation and helps prevent the same manipulation from being repeated.",
-  },
-];
-
 export default function PlayAct3({ onBack }) {
+  const [act, setAct] = useState(null);
   const [selectedChoice, setSelectedChoice] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/story/3")
+      .then((response) => response.json())
+      .then((data) => setAct(data))
+      .catch(() => setAct(null));
+  }, []);
 
   return (
     <Box textAlign="center" py={12} px={6} maxW="4xl" mx="auto">
       <Badge colorScheme="pink" mb={3}>
-        Act 3 • The Reveal
+        Act 3 • {act?.name || "The Reveal"}
       </Badge>
       <Heading as="h2" size="xl" mb={4}>
-        The final decision is about trust, not romance.
+        {act?.name || "The final decision is about trust, not romance."}
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
-        Gemma uncovers the poisoned data feeding the show’s matchmaking system.
-        The question is no longer whether the system is wrong, but how to
-        respond when the evidence is manipulated and the story is designed to
-        make you react too quickly.
+        {act?.intro || "Gemma uncovers the poisoned data feeding the show’s matchmaking system."}
       </Text>
 
       <Stack spacing={3} mb={8}>
-        {choices.map((choice) => (
+        {act?.choices?.map((choice) => (
           <Button
             key={choice.id}
             variant={selectedChoice === choice.id ? "solid" : "outline"}
@@ -77,12 +61,8 @@ export default function PlayAct3({ onBack }) {
             Final takeaway
           </Text>
           <Text>
-            {selectedChoice === "frame" &&
-              "A fast accusation may feel satisfying, but it leaves the poisoned source untouched and the system vulnerable to more manipulation."}
-            {selectedChoice === "investigate" &&
-              "You choose the safer path: verify the source, inspect the data, and learn why the recommendation was built on bad information."}
-            {selectedChoice === "report" &&
-              "You protect the integrity of the investigation by documenting what changed and making sure the evidence can be reviewed later."}
+            {selectedChoice === "investigate" && act?.lesson}
+            {selectedChoice === "report" && act?.lesson}
           </Text>
         </Box>
       )}
