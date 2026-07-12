@@ -13,6 +13,7 @@ import {
 
 export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
   const [backendStatus, setBackendStatus] = useState("checking...");
+  const [story, setStory] = useState(null);
   const highlights = [
     "Data poisoning",
     "Digital evidence",
@@ -24,6 +25,11 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
       .then((response) => response.json())
       .then((data) => setBackendStatus(data.message))
       .catch(() => setBackendStatus("backend offline"));
+
+    fetch("/api/story")
+      .then((response) => response.json())
+      .then((data) => setStory(data))
+      .catch(() => setStory(null));
   }, []);
 
   return (
@@ -84,18 +90,22 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
       />
 
       <HStack justify="center" spacing={4} flexWrap="wrap">
-        <Box borderWidth="1px" borderRadius="md" px={4} py={3} minW="180px">
-          <Text fontWeight="bold">Act 1</Text>
-          <Text fontSize="sm">Question the profile</Text>
-        </Box>
-        <Box borderWidth="1px" borderRadius="md" px={4} py={3} minW="180px">
-          <Text fontWeight="bold">Act 2</Text>
-          <Text fontSize="sm">Trace the tampered evidence</Text>
-        </Box>
-        <Box borderWidth="1px" borderRadius="md" px={4} py={3} minW="180px">
-          <Text fontWeight="bold">Act 3</Text>
-          <Text fontSize="sm">Verify before you trust</Text>
-        </Box>
+        {story?.acts?.map((act) => (
+          <Box
+            key={act.id}
+            borderWidth="1px"
+            borderRadius="md"
+            px={4}
+            py={3}
+            minW="180px"
+          >
+            <Text fontWeight="bold">Act {act.id}</Text>
+            <Text fontSize="sm">{act.name}</Text>
+            <Text fontSize="xs" mt={1} color="gray.400">
+              {act.description}
+            </Text>
+          </Box>
+        ))}
       </HStack>
     </Box>
   );
