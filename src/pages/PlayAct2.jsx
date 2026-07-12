@@ -39,13 +39,13 @@ export default function PlayAct2({ onBack, onGoAct3 }) {
         Act 2 • Mixed Signals
       </Badge>
       <Heading as="h2" size="xl" mb={4}>
-        Every clue seems to point in a different direction.
+        A romance show should feel simple. This one doesn’t.
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
-        Compatibility scores have started shifting, leaked private messages are
-        circulating, and the contestants are turning on one another. The next
-        step is to determine whether a human attacker or a compromised system is
-        causing the chaos.
+        Compatibility scores change overnight, leaked private messages begin to
+        circulate, and the contestants start doubting the show’s evidence. Gemma
+        must decide whether Rex is lying, whether someone is manipulating the
+        system, or whether the algorithm itself has been poisoned.
       </Text>
 
       <Stack spacing={3} mb={8}>

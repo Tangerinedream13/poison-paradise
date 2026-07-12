@@ -22,12 +22,13 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
         Interactive AI security story
       </Badge>
       <Heading as="h1" size="2xl" mb={4}>
-        Toxic Match ☣️💘
+        Perfect Match ☣️💘
       </Heading>
       <Text fontSize="xl" mb={6} maxW="3xl" mx="auto">
-        Gemma and Rex are back in a reality-show drama where the matchmaker is
-        feeding on manipulated signals, suspicious screenshots, and evidence
-        that only looks trustworthy at first glance.
+        Gemma arrives on a glamorous dating competition and discovers that the
+        algorithm has paired her with Rex. What should be a romance reality
+        show becomes a mystery about manipulated signals, suspicious evidence,
+        and a system that may be feeding on bad data.
       </Text>
 
       <Flex justify="center" gap={3} wrap="wrap" mb={8}>

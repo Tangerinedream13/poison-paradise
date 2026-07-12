@@ -36,15 +36,16 @@ export default function PlayAct1({ onGoHome, onGoAct2 }) {
   return (
     <Box textAlign="center" py={12} px={6} maxW="4xl" mx="auto">
       <Badge colorScheme="teal" mb={3}>
-        Act 1 • Second Chance
+        Act 1 • The Pairing
       </Badge>
       <Heading as="h2" size="xl" mb={4}>
-        The profile looks right until it doesn’t.
+        The algorithm says they’re perfect for each other.
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
-        Gemma arrives on Toxic Match and finds Rex paired with her again. The
-        matchmaker says they are 98% compatible, but his account details feel
-        like they have been rearranged to create a convincing lie.
+        Gemma arrives at Perfect Match and learns that the show’s algorithm has
+        paired her with Rex, the one person she already knows has a history of
+        suspicious behavior. The matchmaker calls them a 98% match, but the
+        details feel staged and wrong.
       </Text>
 
       <Stack spacing={3} mb={8}>

@@ -36,16 +36,16 @@ export default function PlayAct3({ onBack }) {
   return (
     <Box textAlign="center" py={12} px={6} maxW="4xl" mx="auto">
       <Badge colorScheme="pink" mb={3}>
-        Act 3 • Toxic Reveal
+        Act 3 • The Reveal
       </Badge>
       <Heading as="h2" size="xl" mb={4}>
         The final decision is about trust, not romance.
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
-        Gemma uncovers the poisoned data feeding the Matchmaker. The question is
-        no longer whether the system is wrong, but how to respond when the
-        evidence is manipulated and the story is designed to make you react too
-        quickly.
+        Gemma uncovers the poisoned data feeding the show’s matchmaking system.
+        The question is no longer whether the system is wrong, but how to
+        respond when the evidence is manipulated and the story is designed to
+        make you react too quickly.
       </Text>
 
       <Stack spacing={3} mb={8}>
