@@ -14,7 +14,7 @@
 
 **Toxic Match** is an interactive “Choose Your Own Adventure” web application that teaches cybersecurity awareness through a dramatic reality dating show narrative.
 
-Gemma and Rex meet again as returning contestants on *Toxic Match*, a fictional streaming reality dating show.
+Gemma and Rex meet again as returning contestants on _Toxic Match_, a fictional streaming reality dating show.
 
 The show’s AI-powered Matchmaker claims that Gemma and Rex are a 98% compatible match. However, contestant profiles have been altered, private messages are appearing out of context, and the Matchmaker is producing increasingly suspicious recommendations.
 
@@ -22,11 +22,11 @@ Someone is poisoning the algorithm.
 
 Rather than presenting AI security as highly technical and intimidating, this project makes it:
 
-* Relatable
-* Story-driven
-* Playful but educational
-* Grounded in cybersecurity research
-* Focused on human trust and decision-making
+- Relatable
+- Story-driven
+- Playful but educational
+- Grounded in cybersecurity research
+- Focused on human trust and decision-making
 
 The goal is to help learners understand that an AI system is only as trustworthy as the data, instructions, and evidence influencing it.
 
@@ -38,7 +38,7 @@ The experience unfolds in three acts:
 
 `match_found.exe`
 
-Gemma arrives on *Toxic Match* and discovers that the Matchmaker has paired her with Rex, the suspicious romantic interest from **Sexy-Phish**.
+Gemma arrives on _Toxic Match_ and discovers that the Matchmaker has paired her with Rex, the suspicious romantic interest from **Sexy-Phish**.
 
 Rex claims that someone altered his contestant profile.
 
@@ -64,11 +64,11 @@ Each act includes 3 - 4 interactive decision points highlighting cybersecurity t
 
 This project is designed for:
 
-* People who enjoy reality dating shows and interactive narratives
-* Users who may not connect with traditional cybersecurity education
-* Learners who are curious about artificial intelligence but do not have a technical background
-* Students learning about data integrity, AI security, and human factors
-* Learners who benefit from storytelling rather than lecture-based instruction
+- People who enjoy reality dating shows and interactive narratives
+- Users who may not connect with traditional cybersecurity education
+- Learners who are curious about artificial intelligence but do not have a technical background
+- Students learning about data integrity, AI security, and human factors
+- Learners who benefit from storytelling rather than lecture-based instruction
 
 By embedding AI security concepts within romance tropes and reality television drama, **Toxic Match** reframes data poisoning and digital trust as modern, relatable, and human-centered cybersecurity issues.
 
@@ -76,21 +76,21 @@ By embedding AI security concepts within romance tropes and reality television d
 
 The project explores:
 
-* Data poisoning
-* Model poisoning
-* Data integrity
-* Data provenance
-* Artificial intelligence security
-* AI overreliance
-* Manipulated compatibility scores
-* Deepfakes and synthetic media
-* Account compromise
-* Insider threats
-* Source verification
-* Confirmation bias
-* Digital evidence verification
-* Ethical considerations in artificial intelligence
-* Human factors in cybersecurity
+- Data poisoning
+- Model poisoning
+- Data integrity
+- Data provenance
+- Artificial intelligence security
+- AI overreliance
+- Manipulated compatibility scores
+- Deepfakes and synthetic media
+- Account compromise
+- Insider threats
+- Source verification
+- Confirmation bias
+- Digital evidence verification
+- Ethical considerations in artificial intelligence
+- Human factors in cybersecurity
 
 ## Learning Objectives
 
@@ -109,22 +109,22 @@ After completing **Toxic Match**, learners should be able to:
 
 ## Tech Stack
 
-* React
-* Vite
-* JavaScript / JSX
-* Chakra UI
-* Railway
-* Cloudflare DNS
-* Shared design elements with **Sexy-Phish**
-* Custom domain: TBD
+- React
+- Vite
+- JavaScript / JSX
+- Chakra UI
+- Railway
+- Cloudflare DNS
+- Shared design elements with **Sexy-Phish**
+- Custom domain: TBD
 
 ## Creative Influences
 
-* Reality dating shows and streaming competition formats 
-* Romance novels and romantic comedy storytelling
-* Artificial intelligence and technology-driven fiction
-* Human-centered cybersecurity education
-* Story continuity with **Sexy-Phish**
+- Reality dating shows and streaming competition formats
+- Romance novels and romantic comedy storytelling
+- Artificial intelligence and technology-driven fiction
+- Human-centered cybersecurity education
+- Story continuity with **Sexy-Phish**
 
 ## Cybersecurity Education Suite
 
@@ -134,22 +134,22 @@ After completing **Toxic Match**, learners should be able to:
 
 Focuses on:
 
-* Phishing
-* Romance scams
-* Credential harvesting
-* Social engineering
-* Emotional manipulation
+- Phishing
+- Romance scams
+- Credential harvesting
+- Social engineering
+- Emotional manipulation
 
 ### Toxic Match ☣️💘
 
 Focuses on:
 
-* Data and model poisoning
-* AI system integrity
-* Deepfakes
-* Compromised accounts
-* Digital evidence
-* Algorithmic trust
+- Data and model poisoning
+- AI system integrity
+- Deepfakes
+- Compromised accounts
+- Digital evidence
+- Algorithmic trust
 
 Each application uses a different fictional narrative to make cybersecurity concepts accessible to learners who may not connect with conventional technical training.
 
@@ -173,20 +173,19 @@ Hart et al. demonstrate how serious games can complement traditional cybersecuri
 
 Ng and Hasan’s systematic review examines the development of cybersecurity serious games and identifies the need for accessible games that address both technical and human-centered cybersecurity topics. Their findings support the broader mission of creating narrative cybersecurity tools for learners without extensive prior knowledge.
 
-
 ## References
 
-[1] Vassilev, A., Oprea, A., Fordyce, A., Anderson, H., Davies, X., & Hamin, M. (2025). *Adversarial machine learning: A taxonomy and terminology of attacks and mitigations*. NIST AI 100-2e2025. https://doi.org/10.6028/NIST.AI.100-2e2025
+[1] Vassilev, A., Oprea, A., Fordyce, A., Anderson, H., Davies, X., & Hamin, M. (2025). _Adversarial machine learning: A taxonomy and terminology of attacks and mitigations_. NIST AI 100-2e2025. https://doi.org/10.6028/NIST.AI.100-2e2025
 
-[2] Cinà, A. E., Grosse, K., Demontis, A., Biggio, B., Roli, F., & Pelillo, M. (2024). Machine learning security against data poisoning: Are we there yet? *Computer, 57*(3), 26–34. https://doi.org/10.1109/MC.2023.3299572
+[2] Cinà, A. E., Grosse, K., Demontis, A., Biggio, B., Roli, F., & Pelillo, M. (2024). Machine learning security against data poisoning: Are we there yet? _Computer, 57_(3), 26–34. https://doi.org/10.1109/MC.2023.3299572
 
-[3] Goldblum, M., Tsipras, D., Xie, C., Chen, X., Schwarzschild, A., Song, D., Madry, A., Li, B., & Goldstein, T. (2023). Dataset security for machine learning: Data poisoning, backdoor attacks, and defenses. *IEEE Transactions on Pattern Analysis and Machine Intelligence, 45*(2), 1563–1580. https://doi.org/10.1109/TPAMI.2022.3162397
+[3] Goldblum, M., Tsipras, D., Xie, C., Chen, X., Schwarzschild, A., Song, D., Madry, A., Li, B., & Goldstein, T. (2023). Dataset security for machine learning: Data poisoning, backdoor attacks, and defenses. _IEEE Transactions on Pattern Analysis and Machine Intelligence, 45_(2), 1563–1580. https://doi.org/10.1109/TPAMI.2022.3162397
 
-[4] Cross, C. (2022). Using artificial intelligence and deepfakes to deceive victims: The need to rethink current romance fraud prevention messaging. *Crime Prevention and Community Safety, 24*, 30–41. https://doi.org/10.1057/s41300-021-00134-w
+[4] Cross, C. (2022). Using artificial intelligence and deepfakes to deceive victims: The need to rethink current romance fraud prevention messaging. _Crime Prevention and Community Safety, 24_, 30–41. https://doi.org/10.1057/s41300-021-00134-w
 
-[5] Hart, S., Margheri, A., Paci, F., & Sassone, V. (2020). Riskio: A serious game for cyber security awareness and education. *Computers & Security, 95*, 101827. https://doi.org/10.1016/j.cose.2020.101827
+[5] Hart, S., Margheri, A., Paci, F., & Sassone, V. (2020). Riskio: A serious game for cyber security awareness and education. _Computers & Security, 95_, 101827. https://doi.org/10.1016/j.cose.2020.101827
 
-[6] Ng, C. Y., & Hasan, M. K. B. (2025). Cybersecurity serious games development: A systematic review. *Computers & Security, 150*, 104307. https://doi.org/10.1016/j.cose.2024.104307
+[6] Ng, C. Y., & Hasan, M. K. B. (2025). Cybersecurity serious games development: A systematic review. _Computers & Security, 150_, 104307. https://doi.org/10.1016/j.cose.2024.104307
 
 ## About the Author
 
@@ -200,5 +199,6 @@ npm run dev
 
 ---
 
-*Toxic Match is an independent educational project featuring an original fictional reality dating show. It is not affiliated with, sponsored by, or endorsed by Netflix or any existing television program.*
->>>>>>> origin/main
+_Toxic Match is an independent educational project featuring an original fictional reality dating show. It is not affiliated with, sponsored by, or endorsed by Netflix or any existing television program._
+
+> > > > > > > origin/main
