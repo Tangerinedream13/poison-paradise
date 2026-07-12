@@ -1,0 +1,12 @@
+{
+  "name": "toxic-match-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.0",
+    "express": "^4.19.0"
+  }
+}
