@@ -6,7 +6,6 @@ import {
   Flex,
   Heading,
   HStack,
-  Progress,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -51,7 +50,15 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
         <Text fontSize="sm" fontWeight="bold" mb={2}>
           Story progress
         </Text>
-        <Progress value={33} colorScheme="purple" size="sm" />
+        <Box
+          h="8px"
+          borderRadius="full"
+          bg="whiteAlpha.200"
+          overflow="hidden"
+          mb={2}
+        >
+          <Box h="100%" w="33%" bg="purple.400" />
+        </Box>
         <Text fontSize="sm" mt={2} color="gray.400">
           Three acts • start with Act 1 to begin the investigation
         </Text>

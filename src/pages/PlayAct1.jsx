@@ -29,7 +29,8 @@ export default function PlayAct1({ onGoHome, onGoAct2 }) {
         {act?.name || "The algorithm says they’re perfect for each other."}
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
-        {act?.intro || "Gemma arrives at Perfect Match and discovers the algorithm has paired her with Rex."}
+        {act?.intro ||
+          "Gemma arrives at Perfect Match and discovers the algorithm has paired her with Rex."}
       </Text>
 
       <Stack spacing={3} mb={8}>

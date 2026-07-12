@@ -29,7 +29,8 @@ export default function PlayAct3({ onBack }) {
         {act?.name || "The final decision is about trust, not romance."}
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
-        {act?.intro || "Gemma uncovers the poisoned data feeding the show’s matchmaking system."}
+        {act?.intro ||
+          "Gemma uncovers the poisoned data feeding the show’s matchmaking system."}
       </Text>
 
       <Stack spacing={3} mb={8}>

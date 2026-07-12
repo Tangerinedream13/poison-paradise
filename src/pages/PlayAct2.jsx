@@ -29,7 +29,8 @@ export default function PlayAct2({ onBack, onGoAct3 }) {
         {act?.name || "A romance show should feel simple. This one doesn’t."}
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
-        {act?.intro || "Compatibility scores change overnight, leaked private messages begin to circulate, and the contestants start doubting the evidence."}
+        {act?.intro ||
+          "Compatibility scores change overnight, leaked private messages begin to circulate, and the contestants start doubting the evidence."}
       </Text>
 
       <Stack spacing={3} mb={8}>
