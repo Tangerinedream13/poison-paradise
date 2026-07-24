@@ -2,7 +2,7 @@
 
 ## An AI Security and Data Poisoning Dating Experience
 
-![Gemma and Rex at the Poisoned Paradise villa](./public/images/poison-paradise-hero)
+[![Gemma and Rex at the Poisoned Paradise villa](https://github.com/Tangerinedream13/poison-paradise/raw/main/public/images/poison-paradise-hero)](https://github.com/Tangerinedream13/poison-paradise/blob/main/public/images/poison-paradise-hero)
 
 **Poisoned Paradise** is an interactive choose-your-own-adventure web experience that teaches AI security, data poisoning, and evidence verification through a tropical reality-dating-show-inspired story.
 
