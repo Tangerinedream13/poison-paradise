@@ -2,15 +2,11 @@
 
 ## An AI Security and Data Poisoning Dating Experience
 
-[![Gemma and Rex at the Poisoned Paradise villa, with neon beach villa lights and a digital matchmaking overlay](https://github.com/Tangerinedream13/poison-paradise/raw/main/public/images/poison-paradise-hero)](https://github.com/Tangerinedream13/poison-paradise/blob/main/public/images/poison-paradise-hero)
+![Gemma and Rex at the Poisoned Paradise villa, with neon beach villa lights and a digital matchmaking overlay](./public/images/poison-paradise-hero)
 
 _Gemma and Rex meet again in Paradise Island’s glamorous villa — but the algorithm that paired them feels poisoned._
 
 **Poisoned Paradise** is an interactive choose-your-own-adventure web experience that teaches AI security, data poisoning, and evidence verification through a tropical reality-dating-show-inspired story.
-
-## The Core Question
-
-**How can poisoned data and manipulated evidence influence AI systems and the people who trust them?**
 
 ## Project Overview
 
