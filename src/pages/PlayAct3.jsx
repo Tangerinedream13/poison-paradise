@@ -30,7 +30,7 @@ export default function PlayAct3({ onBack }) {
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
         {act?.intro ||
-          "Gemma uncovers the poisoned data feeding the show’s matchmaking system."}
+          "Gemma uncovers the poisoned data feeding the villa’s matchmaking system."}
       </Text>
 
       <Stack spacing={3} mb={8}>

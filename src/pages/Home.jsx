@@ -37,13 +37,13 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
         Interactive AI security story
       </Badge>
       <Heading as="h1" size="2xl" mb={4}>
-        Perfect Match ☣️💘
+        Poisoned Paradise 🌴💉
       </Heading>
       <Text fontSize="xl" mb={6} maxW="3xl" mx="auto">
-        Gemma arrives on a glamorous dating competition and discovers that the
-        algorithm has paired her with Rex. What should be a romance reality show
-        becomes a mystery about manipulated signals, suspicious evidence, and a
-        system that may be feeding on bad data.
+        Gemma arrives at a glamorous island villa competition and discovers that
+        the algorithm has paired her with Rex. What should be a steamy romance
+        reality show becomes a mystery about manipulated signals, suspicious
+        evidence, and a system that may be feeding on bad data.
       </Text>
 
       <Box maxW="md" mx="auto" mb={8}>
