@@ -10,7 +10,7 @@ const acts = [
     name: "The Pairing",
     description: "Gemma is paired with Rex by the algorithm.",
     intro:
-      "Gemma arrives at Perfect Match and discovers the algorithm has paired her with Rex, the one person who already feels suspicious.",
+      "Gemma arrives at Poisoned Paradise and discovers the algorithm has paired her with Rex, the one person who already feels suspicious.",
     lesson:
       "A recommendation can look convincing even when the evidence behind it is weak or manipulated.",
     choices: [
@@ -79,12 +79,12 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/api/health", (_req, res) => {
-  res.json({ status: "ok", message: "Perfect Match backend is running" });
+  res.json({ status: "ok", message: "Poisoned Paradise backend is running" });
 });
 
 app.get("/api/story", (_req, res) => {
   res.json({
-    title: "Perfect Match",
+    title: "Poisoned Paradise",
     acts: acts.map(({ id, name, description }) => ({ id, name, description })),
   });
 });
@@ -100,5 +100,5 @@ app.get("/api/story/:actId", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Perfect Match backend listening on port ${port}`);
+  console.log(`Poisoned Paradise backend listening on port ${port}`);
 });

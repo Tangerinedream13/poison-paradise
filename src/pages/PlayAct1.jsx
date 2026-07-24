@@ -30,7 +30,7 @@ export default function PlayAct1({ onGoHome, onGoAct2 }) {
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
         {act?.intro ||
-          "Gemma arrives at Perfect Match and discovers the algorithm has paired her with Rex."}
+          "Gemma arrives at Poisoned Paradise and discovers the algorithm has paired her with Rex."}
       </Text>
 
       <Stack spacing={3} mb={8}>
