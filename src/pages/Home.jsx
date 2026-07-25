@@ -10,7 +10,11 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
+export default function Home({
+  onStartEpisode1,
+  onStartEpisode2,
+  onStartEpisode3,
+}) {
   const [backendStatus, setBackendStatus] = useState("checking...");
   const [story, setStory] = useState(null);
   const highlights = [
@@ -100,13 +104,13 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
       </Flex>
 
       <VStack spacing={4} mb={8}>
-        <Button colorScheme="teal" size="lg" onClick={onStartAct1}>
+        <Button colorScheme="teal" size="lg" onClick={onStartEpisode1}>
           Start Episode 1
         </Button>
-        <Button colorScheme="orange" size="lg" onClick={onStartAct2}>
+        <Button colorScheme="orange" size="lg" onClick={onStartEpisode2}>
           Start Episode 2
         </Button>
-        <Button colorScheme="pink" size="lg" onClick={onStartAct3}>
+        <Button colorScheme="pink" size="lg" onClick={onStartEpisode3}>
           Start Episode 3
         </Button>
       </VStack>

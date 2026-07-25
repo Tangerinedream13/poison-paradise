@@ -9,7 +9,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-export default function PlayAct1({ onGoHome, onGoAct2 }) {
+export default function PlayAct1({ onGoHome, onGoEpisode2 }) {
   const [act, setAct] = useState(null);
   const [selectedChoice, setSelectedChoice] = useState(null);
 
@@ -93,7 +93,7 @@ export default function PlayAct1({ onGoHome, onGoAct2 }) {
         <Button
           colorScheme="teal"
           size="lg"
-          onClick={onGoAct2}
+          onClick={onGoEpisode2}
           disabled={!selectedChoice}
           w="full"
           maxW="320px"
