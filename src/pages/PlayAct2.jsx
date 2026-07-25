@@ -21,16 +21,28 @@ export default function PlayAct2({ onBack, onGoAct3 }) {
   }, []);
 
   return (
-    <Box textAlign="center" py={12} px={6} maxW="4xl" mx="auto">
+    <Box
+      textAlign="center"
+      py={12}
+      px={6}
+      maxW="6xl"
+      mx="auto"
+      borderWidth="1px"
+      borderColor="whiteAlpha.200"
+      bg="rgba(7, 12, 24, 0.78)"
+      backdropFilter="blur(18px)"
+      borderRadius="32px"
+      boxShadow="0 24px 90px rgba(0, 0, 0, 0.45)"
+    >
       <Badge colorScheme="orange" mb={3}>
-        Act 2 • {act?.name || "Mixed Signals"}
+        Episode 2 • {act?.name || "Mixed Signals"}
       </Badge>
       <Heading as="h2" size="xl" mb={4}>
-        {act?.name || "A romance show should feel simple. This one doesn’t."}
+        {act?.name || "The romance turns out to be an operation."}
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
         {act?.intro ||
-          "Compatibility scores change overnight, leaked private messages begin to circulate, and the contestants start doubting the evidence."}
+          "Gemma realizes the dating game is a social-engineering trap, tells Rex the truth, and they start feeding the operative fake credentials and decoy files."}
       </Text>
 
       <Stack spacing={3} mb={8}>
@@ -57,7 +69,15 @@ export default function PlayAct2({ onBack, onGoAct3 }) {
       </Stack>
 
       {selectedChoice && (
-        <Box borderWidth="1px" borderRadius="md" p={5} mb={6} textAlign="left">
+        <Box
+          borderWidth="1px"
+          borderColor="whiteAlpha.200"
+          borderRadius="24px"
+          p={5}
+          mb={6}
+          textAlign="left"
+          bg="whiteAlpha.50"
+        >
           <Text fontWeight="bold" mb={2}>
             What you learn
           </Text>
@@ -74,10 +94,18 @@ export default function PlayAct2({ onBack, onGoAct3 }) {
           size="lg"
           onClick={onGoAct3}
           disabled={!selectedChoice}
+          w="full"
+          maxW="320px"
         >
-          Reveal the final act
+          Reveal Episode 3
         </Button>
-        <Button variant="outline" size="lg" onClick={onBack}>
+        <Button
+          variant="outline"
+          size="lg"
+          onClick={onBack}
+          w="full"
+          maxW="320px"
+        >
           Back to Home
         </Button>
       </VStack>

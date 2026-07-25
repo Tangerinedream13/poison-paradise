@@ -5,7 +5,7 @@ import {
   Button,
   Flex,
   Heading,
-  HStack,
+  SimpleGrid,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -14,8 +14,8 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
   const [backendStatus, setBackendStatus] = useState("checking...");
   const [story, setStory] = useState(null);
   const highlights = [
-    "Data poisoning",
-    "Digital evidence",
+    "Data provenance",
+    "Digital corroboration",
     "Algorithmic trust",
   ];
 
@@ -32,23 +32,47 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
   }, []);
 
   return (
-    <Box textAlign="center" py={12} px={6} maxW="4xl" mx="auto">
+    <Box
+      textAlign="center"
+      py={12}
+      px={6}
+      maxW="6xl"
+      mx="auto"
+      borderWidth="1px"
+      borderColor="whiteAlpha.200"
+      bg="rgba(7, 12, 24, 0.78)"
+      backdropFilter="blur(18px)"
+      borderRadius="32px"
+      boxShadow="0 24px 90px rgba(0, 0, 0, 0.45)"
+    >
       <Badge colorScheme="purple" px={3} py={1} fontSize="0.9em" mb={4}>
-        Interactive AI security story
+        Interactive AI security episodes
       </Badge>
       <Heading as="h1" size="2xl" mb={4}>
         Poisoned Paradise 🌴💉
       </Heading>
       <Text fontSize="xl" mb={6} maxW="3xl" mx="auto">
         Gemma arrives at a glamorous island villa competition and discovers that
-        the algorithm has paired her with Rex. What should be a steamy romance
-        reality show becomes a mystery about manipulated signals, suspicious
-        evidence, and a system that may be feeding on bad data.
+        the algorithm keeps pairing her with Rex while nudging suspicious trust
+        questions into every date. What should be a steamy romance reality show
+        becomes a reversal story about social engineering, fake evidence, and a
+        couple using corroborated telemetry to turn the trap back on the
+        attacker.
       </Text>
 
-      <Box maxW="md" mx="auto" mb={8}>
+      <Box
+        maxW="md"
+        mx="auto"
+        mb={8}
+        borderWidth="1px"
+        borderColor="whiteAlpha.200"
+        borderRadius="24px"
+        bg="whiteAlpha.50"
+        p={5}
+        textAlign="left"
+      >
         <Text fontSize="sm" fontWeight="bold" mb={2}>
-          Story progress
+          Episode progress
         </Text>
         <Box
           h="8px"
@@ -60,7 +84,7 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
           <Box h="100%" w="33%" bg="purple.400" />
         </Box>
         <Text fontSize="sm" mt={2} color="gray.400">
-          Three acts • start with Act 1 to begin the investigation
+          Three episodes • start with Episode 1 to begin the investigation
         </Text>
         <Text fontSize="xs" mt={3} color="gray.500">
           Backend status: {backendStatus}
@@ -77,13 +101,13 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
 
       <VStack spacing={4} mb={8}>
         <Button colorScheme="teal" size="lg" onClick={onStartAct1}>
-          Start Act 1
+          Start Episode 1
         </Button>
         <Button colorScheme="orange" size="lg" onClick={onStartAct2}>
-          Start Act 2
+          Start Episode 2
         </Button>
         <Button colorScheme="pink" size="lg" onClick={onStartAct3}>
-          Start Act 3
+          Start Episode 3
         </Button>
       </VStack>
 
@@ -96,24 +120,31 @@ export default function Home({ onStartAct1, onStartAct2, onStartAct3 }) {
         maxW="2xl"
       />
 
-      <HStack justify="center" spacing={4} flexWrap="wrap">
-        {story?.acts?.map((act) => (
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4}>
+        {story?.episodes?.map((episode) => (
           <Box
-            key={act.id}
+            key={episode.id}
             borderWidth="1px"
-            borderRadius="md"
+            borderColor="whiteAlpha.200"
+            borderRadius="20px"
             px={4}
-            py={3}
-            minW="180px"
+            py={4}
+            minW="0"
+            bg="whiteAlpha.50"
+            textAlign="left"
           >
-            <Text fontWeight="bold">Act {act.id}</Text>
-            <Text fontSize="sm">{act.name}</Text>
-            <Text fontSize="xs" mt={1} color="gray.400">
-              {act.description}
+            <Text fontSize="sm" fontWeight="bold" color="whiteAlpha.800">
+              Episode {episode.id}
+            </Text>
+            <Text fontSize="md" fontWeight="semibold" mt={1} mb={2}>
+              {episode.name}
+            </Text>
+            <Text fontSize="xs" color="gray.300">
+              {episode.description}
             </Text>
           </Box>
         ))}
-      </HStack>
+      </SimpleGrid>
     </Box>
   );
 }

@@ -21,16 +21,28 @@ export default function PlayAct3({ onBack }) {
   }, []);
 
   return (
-    <Box textAlign="center" py={12} px={6} maxW="4xl" mx="auto">
+    <Box
+      textAlign="center"
+      py={12}
+      px={6}
+      maxW="6xl"
+      mx="auto"
+      borderWidth="1px"
+      borderColor="whiteAlpha.200"
+      bg="rgba(7, 12, 24, 0.78)"
+      backdropFilter="blur(18px)"
+      borderRadius="32px"
+      boxShadow="0 24px 90px rgba(0, 0, 0, 0.45)"
+    >
       <Badge colorScheme="pink" mb={3}>
-        Act 3 • {act?.name || "The Reveal"}
+        Episode 3 • {act?.name || "The Reveal"}
       </Badge>
       <Heading as="h2" size="xl" mb={4}>
-        {act?.name || "The final decision is about trust, not romance."}
+        {act?.name || "The final recalculation exposes the operative."}
       </Heading>
       <Text fontSize="lg" mb={8} maxW="3xl" mx="auto">
         {act?.intro ||
-          "Gemma uncovers the poisoned data feeding the villa’s matchmaking system."}
+          "The fake credentials trigger Cyber Steel’s monitoring system, and Gemma and Rex reveal they were using the match to expose the operative instead of each other."}
       </Text>
 
       <Stack spacing={3} mb={8}>
@@ -57,7 +69,15 @@ export default function PlayAct3({ onBack }) {
       </Stack>
 
       {selectedChoice && (
-        <Box borderWidth="1px" borderRadius="md" p={5} mb={6} textAlign="left">
+        <Box
+          borderWidth="1px"
+          borderColor="whiteAlpha.200"
+          borderRadius="24px"
+          p={5}
+          mb={6}
+          textAlign="left"
+          bg="whiteAlpha.50"
+        >
           <Text fontWeight="bold" mb={2}>
             Final takeaway
           </Text>
@@ -69,7 +89,13 @@ export default function PlayAct3({ onBack }) {
       )}
 
       <VStack spacing={4}>
-        <Button colorScheme="pink" size="lg" onClick={onBack}>
+        <Button
+          colorScheme="pink"
+          size="lg"
+          onClick={onBack}
+          w="full"
+          maxW="320px"
+        >
           Return to the home screen
         </Button>
       </VStack>
