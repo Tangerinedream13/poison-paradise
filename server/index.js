@@ -4,72 +4,75 @@ import cors from "cors";
 const app = express();
 const port = process.env.PORT || 3001;
 
-const acts = [
+const episodes = [
   {
     id: 1,
-    name: "The Pairing",
-    description: "Gemma is paired with Rex by the algorithm.",
+    name: "The Perfect Match",
+    description:
+      "Gemma keeps getting paired with Rex as the algorithm tests provenance and trust.",
     intro:
-      "Gemma arrives at Poisoned Paradise and discovers the algorithm has paired her with Rex, the one person who already feels suspicious.",
+      "Gemma arrives at Poisoned Paradise and discovers the algorithm keeps pairing her with Rex while embedding suspiciously specific prompts about his work, credentials, routines, and security controls.",
     lesson:
-      "A recommendation can look convincing even when the evidence behind it is weak or manipulated.",
+      "A recommendation can be nudged by poisoned inputs, so provenance and corroboration matter as much as the match itself.",
     choices: [
       {
         id: "profile",
-        title: "Check the profile source",
+        title: "Inspect the match source",
         detail:
-          "Trace the profile back to its origin before trusting the match.",
+          "Trace where the pairing and trust questions are really coming from.",
       },
       {
         id: "timing",
-        title: "Compare timestamps",
-        detail: "Look for shifts in the evidence that suggest tampering.",
+        title: "Compare the prompts",
+        detail: "Look for patterns in the questions that reveal manipulation.",
       },
     ],
   },
   {
     id: 2,
-    name: "Mixed Signals",
-    description: "Evidence and compatibility scores begin to conflict.",
+    name: "Trouble in Paradise",
+    description:
+      "Gemma realizes the romance is a social-engineering operation and decides to counter it with traceable evidence.",
     intro:
-      "Compatibility scores change, screenshots start circulating, and the contestants begin questioning the evidence.",
+      "Gemma realizes the dating game is actually a social-engineering operation, tells Rex the truth, and they decide to feed the operative fake credentials, fabricated Cyber Steel project names, false vulnerabilities, and decoy files with a clear audit trail.",
     lesson:
-      "When signals conflict, the safest move is to verify the source rather than react to the drama.",
+      "Deception can be exposed by giving an attacker believable but traceable information they think is valuable, then watching the telemetry.",
     choices: [
       {
         id: "audit",
-        title: "Request the audit trail",
+        title: "Feed fake credentials",
         detail:
-          "Follow the data lineage to understand where the evidence came from.",
+          "Give the operative plausible login details that can be monitored.",
       },
       {
         id: "screenshot",
-        title: "Verify the screenshot independently",
+        title: "Plant a honeytoken",
         detail:
-          "Cross-check the screenshot with another source to expose a misleading edit.",
+          "Use a decoy file or traceable document to reveal the leak path.",
       },
     ],
   },
   {
     id: 3,
-    name: "The Reveal",
-    description: "Gemma investigates the poisoned data behind the system.",
+    name: "The Final Recalculation",
+    description:
+      "The operative takes the bait and Cyber Steel’s monitoring exposes the attack path.",
     intro:
-      "Gemma finds the poisoned data feeding the matchmaking system and realizes the system is only as trustworthy as the information it receives.",
+      "The operative uses the fake credentials, Cyber Steel’s monitoring system lights up, and Gemma and Rex reveal that they poisoned the mission back. Gemma’s line lands cleanly: ‘You thought you were using me to steal Rex’s secrets. We were using you to reveal yours.’",
     lesson:
-      "Verification, documentation, and independent evidence are essential when a system is influenced by bad data.",
+      "Trust can be rebuilt when verification, restraint, and a shared plan turn manipulation back on the manipulator.",
     choices: [
       {
         id: "investigate",
-        title: "Trace the poisoned data",
+        title: "Trigger the monitoring",
         detail:
-          "Investigate the source to understand how false data entered the system.",
+          "Let the traceable bait expose the operative’s identity and location.",
       },
       {
         id: "report",
-        title: "Document and report the anomaly",
+        title: "Reveal the reversal",
         detail:
-          "Preserve evidence and report the issue before acting on the manipulated story.",
+          "Use the final confrontation to show Gemma and Rex were working together.",
       },
     ],
   },
@@ -85,18 +88,24 @@ app.get("/api/health", (_req, res) => {
 app.get("/api/story", (_req, res) => {
   res.json({
     title: "Poisoned Paradise",
-    acts: acts.map(({ id, name, description }) => ({ id, name, description })),
+    episodes: episodes.map(({ id, name, description }) => ({
+      id,
+      name,
+      description,
+    })),
   });
 });
 
-app.get("/api/story/:actId", (req, res) => {
-  const act = acts.find((entry) => entry.id === Number(req.params.actId));
+app.get("/api/story/:episodeId", (req, res) => {
+  const episode = episodes.find(
+    (entry) => entry.id === Number(req.params.episodeId),
+  );
 
-  if (!act) {
-    return res.status(404).json({ error: "Act not found" });
+  if (!episode) {
+    return res.status(404).json({ error: "Episode not found" });
   }
 
-  return res.json(act);
+  return res.json(episode);
 });
 
 app.listen(port, () => {

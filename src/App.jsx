@@ -8,33 +8,33 @@ import "./App.css";
 export default function App() {
   const [screen, setScreen] = useState("home");
 
-  if (screen === "act1") {
+  if (screen === "episode1") {
     return (
       <PlayAct1
         onGoHome={() => setScreen("home")}
-        onGoAct2={() => setScreen("act2")}
+        onGoEpisode2={() => setScreen("episode2")}
       />
     );
   }
 
-  if (screen === "act2") {
+  if (screen === "episode2") {
     return (
       <PlayAct2
         onBack={() => setScreen("home")}
-        onGoAct3={() => setScreen("act3")}
+        onGoEpisode3={() => setScreen("episode3")}
       />
     );
   }
 
-  if (screen === "act3") {
+  if (screen === "episode3") {
     return <PlayAct3 onBack={() => setScreen("home")} />;
   }
 
   return (
     <Home
-      onStartAct1={() => setScreen("act1")}
-      onStartAct2={() => setScreen("act2")}
-      onStartAct3={() => setScreen("act3")}
+      onStartEpisode1={() => setScreen("episode1")}
+      onStartEpisode2={() => setScreen("episode2")}
+      onStartEpisode3={() => setScreen("episode3")}
     />
   );
 }
